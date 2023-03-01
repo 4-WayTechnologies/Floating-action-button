@@ -1,11 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-
+import { StyleSheet, Text, View ,Linking} from 'react-native';
+import FloatingButton  from "react-native-social-fab";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <FloatingButton 
+    onPressFacebook= { () => Linking.openURL('https://www.facebook.com/login/')}
+    onPressTwitter= { () => Linking.openURL('https://twitter.com/i/flow/login')}
+    onPressInstagram= { () => Linking.openURL('https://www.instagram.com/accounts/login/')}
+
+  />
     </View>
   );
 }
